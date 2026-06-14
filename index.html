@@ -1,40 +1,99 @@
-<!-- DOAÇÃO -->
-<div class="donation">
-  <h2>💝 Apoie o Autor</h2>
-  <p>
-    Se você gostou da história, considere fazer uma doação para ajudar
-    na criação de novos livros infantis.
-  </p>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Livro infantil digital 'Dudu, o Pequeno Dragão'.">
+  <meta name="theme-color" content="#111111">
+  <meta property="og:title" content="Dudu, o Pequeno Dragão">
+  <meta property="og:description" content="Livro infantil digital com download direto.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/cover.png">
+  <title>Dudu, o Pequeno Dragão</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <main class="wrap">
+    <section class="card" aria-label="Página do livro">
+      <div class="layout">
+        <div class="cover">
+          <img src="assets/cover.png" alt="Capa do livro Dudu, o Pequeno Dragão">
+        </div>
 
-  <img src="assets/qr_code.png" alt="QR Code para doação" class="qr">
+        <div class="content">
+          <h1>Dudu, o Pequeno Dragão</h1>
+          <p class="author">Autor: Rafael Vieira Dantas</p>
 
-  <p class="small">
-    Escaneie o QR Code usando o aplicativo do seu banco.
-  </p>
-</div>
+          <a class="btn" href="assets/Dudu_O_Pequeno_Dragao.pdf" download>
+            Baixar o livro
+          </a>
 
-<!-- FEEDBACK -->
-<div class="feedback">
-  <h2>⭐ Avaliações Públicas</h2>
+          <div class="credits">
+            <strong>Créditos</strong><br>
+            Capa, texto e edição: Rafael Vieira Dantas
+            <div class="fine">Créditos a ChatGPT e Claude.</div>
+          </div>
+        </div>
+      </div>
 
-  <div class="stars">
-    <button onclick="setRating(1)">★</button>
-    <button onclick="setRating(2)">★</button>
-    <button onclick="setRating(3)">★</button>
-    <button onclick="setRating(4)">★</button>
-    <button onclick="setRating(5)">★</button>
-  </div>
+      <!-- DOAÇÃO -->
+      <div class="donation">
+        <h2>💝 Apoie o Autor</h2>
+        <p>
+          Se você gostou da história, considere fazer uma doação para ajudar
+          na criação de novos livros infantis.
+        </p>
 
-  <form id="commentForm">
-    <input
-      type="text"
-      id="name"
-      placeholder="Seu nome"
-      required
-    >
+        <img src="assets/qr_code.png" alt="QR Code para doação" class="qr">
 
-    <textarea
-      id="comment"
+        <p class="small">
+          Escaneie o QR Code usando o aplicativo do seu banco.
+        </p>
+      </div>
+
+      <!-- FEEDBACK -->
+      <div class="feedback">
+        <h2>⭐ Avaliações Públicas</h2>
+        <p class="small">
+          As avaliações abaixo ficam visíveis para todos os visitantes.
+        </p>
+
+        <div class="stars" aria-label="Escolha uma nota de 1 a 5 estrelas">
+          <button type="button" onclick="setRating(1)" aria-label="1 estrela">★</button>
+          <button type="button" onclick="setRating(2)" aria-label="2 estrelas">★</button>
+          <button type="button" onclick="setRating(3)" aria-label="3 estrelas">★</button>
+          <button type="button" onclick="setRating(4)" aria-label="4 estrelas">★</button>
+          <button type="button" onclick="setRating(5)" aria-label="5 estrelas">★</button>
+        </div>
+
+        <form id="commentForm">
+          <input
+            type="text"
+            id="name"
+            placeholder="Seu nome"
+            required
+          >
+
+          <textarea
+            id="comment"
+            placeholder="O que você achou do livro?"
+            required
+          ></textarea>
+
+          <button type="submit" class="btn">
+            Publicar Avaliação
+          </button>
+        </form>
+
+        <div id="comments"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/script.js"></script>
+</body>
+  </html>      id="comment"
       placeholder="O que você achou do livro?"
       required
     ></textarea>
