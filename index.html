@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Livro infantil digital 'Dudu, o Pequeno Dragão' para leitura e download.">
+  <meta name="theme-color" content="#6d28d9">
+  <meta property="og:title" content="Dudu, o Pequeno Dragão">
+  <meta property="og:description" content="Um livro infantil digital sobre medo, coragem e o primeiro voo.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/cover.png">
+  <title>Dudu, o Pequeno Dragão</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <style>
+    :root{--bg:#0f172a;--panel:rgba(255,255,255,.08);--panel-2:rgba(255,255,255,.12);--text:#f8fafc;--muted:#cbd5e1;--accent:#8b5cf6;--accent2:#22c55e;--line:rgba(255,255,255,.12);--shadow:0 20px 60px rgba(0,0,0,.35);--radius:28px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(circle at top, rgba(139,92,246,.28), transparent 34%),radial-gradient(circle at 20% 20%, rgba(34,197,94,.12), transparent 28%),linear-gradient(180deg, #111827 0%, #0f172a 45%, #020617 100%);color:var(--text);line-height:1.5}
+    a{color:inherit}
+    .wrap{max-width:1180px;margin:0 auto;padding:24px}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 0 24px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.2px}
+    .badge{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),#ec4899);box-shadow:var(--shadow);font-size:22px}
+    .nav small{color:var(--muted)}
+    .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:center;padding:18px 0 32px}
+    .card{background:linear-gradient(180deg,var(--panel),rgba(255,255,255,.04));border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;backdrop-filter:blur(12px)}
+    .hero-copy{padding:40px}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid var(--line);color:var(--muted);font-size:.92rem;margin-bottom:18px}
+    h1{font-size:clamp(2.4rem,6vw,4.8rem);line-height:1.02;margin:0 0 16px}
+    .lede{font-size:1.1rem;color:var(--muted);max-width:58ch;margin:0 0 26px}
+    .actions{display:flex;flex-wrap:wrap;gap:14px;margin:0 0 24px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 18px;border-radius:16px;text-decoration:none;font-weight:700;border:1px solid transparent;transition:.2s transform,.2s opacity,.2s background}
+    .btn:hover{transform:translateY(-1px)}
+    .btn.primary{background:linear-gradient(135deg,var(--accent),#ec4899);color:white}
+    .btn.secondary{background:rgba(255,255,255,.08);border-color:var(--line)}
+    .meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+    .meta div{padding:14px 16px;border-radius:18px;background:rgba(255,255,255,.06);border:1px solid var(--line)}
+    .meta strong{display:block;font-size:1.02rem}
+    .meta span{color:var(--muted);font-size:.92rem}
+    .hero-art{padding:16px}
+    .hero-art img{width:100%;height:auto;display:block;border-radius:22px;aspect-ratio:1 / 1;object-fit:cover;border:1px solid var(--line)}
+    section{padding:12px 0 24px}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .section-title{font-size:1.55rem;margin:0 0 14px}
+    .panel{padding:28px}
+    .panel p,.panel li{color:var(--muted)}
+    .pill-list{display:flex;flex-wrap:wrap;gap:10px;padding:0;margin:18px 0 0;list-style:none}
+    .pill-list li{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid var(--line);color:#e2e8f0}
+    .gallery{display:grid;grid-template-columns:repeat(4, minmax(0,1fr));gap:14px}
+    .shot{overflow:hidden;background:rgba(255,255,255,.05);border:1px solid var(--line)}
+    .shot img{width:100%;height:100%;display:block;object-fit:cover;aspect-ratio:1/1.05}
+    .download{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center}
+    .download .panel{height:100%}
+    .download-box{display:flex;flex-direction:column;gap:16px;align-items:flex-start;justify-content:center;padding:34px}
+    .file-box{width:100%;padding:18px;border-radius:18px;background:rgba(255,255,255,.06);border:1px solid var(--line);color:var(--muted)}
+    footer{padding:24px 0 42px;color:var(--muted);font-size:.95rem;text-align:center}
+    .fine{font-size:.88rem;color:#94a3b8}
+    @media (max-width: 920px){.hero,.grid-2,.download{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2, minmax(0,1fr))}.meta{grid-template-columns:1fr}.hero-copy{padding:28px}.download-box{padding:26px}}
+    @media (max-width: 560px){.wrap{padding:16px}.gallery{grid-template-columns:1fr}h1{font-size:2.6rem}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="nav">
+      <div class="brand">
+        <div class="badge">🐉</div>
+        <div>
+          <div>Dudu, o Pequeno Dragão</div>
+          <small>Livro infantil digital</small>
+        </div>
+      </div>
+      <small>Site pronto para GitHub Pages / Cloudflare Pages</small>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="card hero-copy">
+          <span class="eyebrow">Coragem • amizade • primeiro voo</span>
+          <h1>Uma história para crianças que têm medo, mas tentam mesmo assim.</h1>
+          <p class="lede">
+            Dudu mora em um vale encantado e precisa aprender que sentir medo é normal.
+            Com uma pequena ajuda, ele descobre que a coragem aparece quando a gente tenta.
+          </p>
+          <div class="actions">
+            <a class="btn primary" href="assets/Dudu_O_Pequeno_Dragao.pdf" download>Baixar o PDF</a>
+            <a class="btn secondary" href="#sobre">Conhecer o livro</a>
+          </div>
+          <div class="meta">
+            <div><strong>Autor</strong><span>Rafael Vieira Dantas</span></div>
+            <div><strong>Público</strong><span>Livro infantil digital</span></div>
+            <div><strong>Mensagem</strong><span>“A coragem aparece quando tentamos mesmo assim.”</span></div>
+          </div>
+        </div>
+
+        <div class="card hero-art">
+          <img src="assets/cover.png" alt="Capa do livro Dudu, o Pequeno Dragão">
+        </div>
+      </section>
+
+      <section id="sobre" class="grid-2">
+        <div class="card panel">
+          <h2 class="section-title">Sobre o livro</h2>
+          <p>
+            Esta página foi montada para apresentar o livro de forma simples, bonita e rápida.
+            O visitante encontra a capa, uma breve apresentação e o botão de download logo no topo.
+          </p>
+          <p>
+            A história acompanha Dudu, um pequeno dragão que aprende a enfrentar o medo de voar.
+            O tom é leve, visual e pensado para leitura infantil.
+          </p>
+          <ul class="pill-list">
+            <li>Download direto</li>
+            <li>Leitura fácil no celular</li>
+            <li>Hospedagem estática</li>
+            <li>Pronto para personalizar</li>
+          </ul>
+        </div>
+
+        <div class="card panel">
+          <h2 class="section-title">Para publicar no GitHub</h2>
+          <p>
+            Basta subir estes arquivos para um repositório e ativar GitHub Pages ou conectar o repositório
+            ao Cloudflare Pages.
+          </p>
+          <p class="fine">
+            Estrutura incluída: index.html, 404.html, README.md, favicon.svg e pasta assets com o PDF e imagens de prévia.
+          </p>
+          <div class="file-box">
+            <strong>Estrutura principal</strong><br>
+            /assets/Dudu_O_Pequeno_Dragao.pdf<br>
+            /assets/cover.png<br>
+            /assets/page-2.png ... /assets/page-5.png
+          </div>
+        </div>
+      </section>
+
+      <section class="card download">
+        <div class="download-box">
+          <span class="eyebrow">Download oficial</span>
+          <h2 class="section-title" style="margin:0">Livro pronto para compartilhar</h2>
+          <p class="lede" style="margin:0">
+            O arquivo PDF já está embutido na pasta assets para funcionar bem no repositório e no deploy estático.
+          </p>
+          <div class="actions" style="margin:0">
+            <a class="btn primary" href="assets/Dudu_O_Pequeno_Dragao.pdf" download>Baixar agora</a>
+            <a class="btn secondary" href="#galeria">Ver páginas</a>
+          </div>
+        </div>
+        <div class="download-box" style="background:rgba(255,255,255,.03)">
+          <strong>Observação</strong>
+          <p class="fine" style="margin:0">
+            Se quiser, este site também pode receber uma página de venda, formulário de contato,
+            botão do WhatsApp, captura de e-mail ou área de amostra grátis.
+          </p>
+        </div>
+      </section>
+
+      <section id="galeria">
+        <h2 class="section-title">Prévia do livro</h2>
+        <div class="gallery">
+          <div class="card shot"><img src="assets/page-2.png" alt="Página 2 do livro"></div>
+          <div class="card shot"><img src="assets/page-3.png" alt="Página 3 do livro"></div>
+          <div class="card shot"><img src="assets/page-4.png" alt="Página 4 do livro"></div>
+          <div class="card shot"><img src="assets/page-5.png" alt="Página 5 do livro"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>Dudu, o Pequeno Dragão • Site estático pronto para GitHub Pages e Cloudflare Pages</div>
+      <div class="fine">Todos os direitos reservados ao autor indicado no PDF.</div>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,2 +1,26 @@
-# dudu-o-pequeno-dragao
-Site oficial do livro infantil "Dudu, o Pequeno Dragão que Tinha Medo de Voar".  Uma história inspiradora sobre coragem, superação e confiança, criada para ajudar crianças a entender que sentir medo é normal e que a verdadeira coragem surge quando tentamos mesmo assim.  Autor: Rafael Vieira Dantas Ilustrações geradas com Inteligência Artificial.
+# Dudu, o Pequeno Dragão
+
+Site estático pronto para GitHub Pages ou Cloudflare Pages.
+
+## Estrutura
+
+- `index.html` - página principal
+- `404.html` - página de erro
+- `favicon.svg` - ícone do site
+- `assets/` - PDF e imagens de prévia
+
+## Publicar no GitHub Pages
+
+1. Crie um repositório novo.
+2. Envie todos os arquivos deste projeto.
+3. Em **Settings > Pages**, selecione a branch principal e a pasta raiz.
+
+## Publicar no Cloudflare Pages
+
+1. Conecte o repositório do GitHub.
+2. Selecione o projeto.
+3. Não é necessário build command; é um site estático.
+
+## Observação
+
+O PDF foi mantido dentro de `assets/` para funcionar com links relativos no deploy.
