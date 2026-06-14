@@ -1,40 +1,494 @@
 <!doctype html>
+
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Dudu, o Pequeno Dragão — livro infantil digital sobre medo, coragem e o primeiro voo.">
-  <meta name="theme-color" content="#6d28d9">
-
+  <meta name="description" content="Dudu, o Pequeno Dragão — livro infantil digital para leitura e download.">
+  <meta name="theme-color" content="#7c3aed">
   <meta property="og:title" content="Dudu, o Pequeno Dragão">
   <meta property="og:description" content="Um livro infantil digital sobre medo, coragem e o primeiro voo.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/cover.png">
-
   <title>Dudu, o Pequeno Dragão</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-
-  <!-- Google AdSense: troque SEU-CLIENTE-ADSENSE pelo seu ID real -->
-  <script async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=SEU-CLIENTE-ADSENSE"
-    crossorigin="anonymous"></script>
-
   <style>
-    :root{
-      --bg:#081120;
-      --bg2:#0f172a;
-      --panel:rgba(255,255,255,.06);
-      --panel-2:rgba(255,255,255,.09);
-      --line:rgba(255,255,255,.10);
-      --text:#f8fafc;
-      --muted:#cbd5e1;
-      --soft:#94a3b8;
-      --accent:#8b5cf6;
-      --accent2:#ec4899;
-      --good:#22c55e;
-      --shadow:0 18px 60px rgba(0,0,0,.35);
-      --radius:28px;
-      --radius-sm:18px;
+    :root {
+      --bg-1: #0f172a;
+      --bg-2: #111827;
+      --bg-3: #020617;
+      --panel: rgba(255, 255, 255, 0.07);
+      --panel-strong: rgba(255, 255, 255, 0.11);
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --soft: #94a3b8;
+      --accent: #8b5cf6;
+      --accent-2: #ec4899;
+      --line: rgba(255, 255, 255, 0.12);
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.34);
+      --radius: 28px;
+      --radius-sm: 18px;
+    }* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--text);
+  line-height: 1.5;
+  background:
+    radial-gradient(circle at top, rgba(139, 92, 246, 0.22), transparent 28%),
+    radial-gradient(circle at 18% 18%, rgba(236, 72, 153, 0.12), transparent 26%),
+    radial-gradient(circle at 82% 16%, rgba(34, 197, 94, 0.10), transparent 18%),
+    linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 52%, var(--bg-3) 100%);
+}
+
+a { color: inherit; }
+img { max-width: 100%; display: block; }
+
+.wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 22px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 0 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.brand-mark {
+  width: 46px;
+  height: 46px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  box-shadow: var(--shadow);
+  flex: 0 0 auto;
+  font-size: 22px;
+}
+
+.brand-text strong {
+  display: block;
+  font-size: 1rem;
+  letter-spacing: 0.2px;
+}
+
+.brand-text span,
+.tiny {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.card {
+  background: linear-gradient(180deg, var(--panel), rgba(255, 255, 255, 0.04));
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  overflow: hidden;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 24px;
+  align-items: stretch;
+  padding: 10px 0 22px;
+}
+
+.hero-copy {
+  padding: 40px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin-bottom: 18px;
+}
+
+h1 {
+  font-size: clamp(2.4rem, 5.8vw, 4.8rem);
+  line-height: 1.02;
+  margin: 0 0 16px;
+  letter-spacing: -0.03em;
+}
+
+.lede {
+  max-width: 60ch;
+  margin: 0 0 26px;
+  color: var(--muted);
+  font-size: 1.06rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 0 0 26px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 18px;
+  border-radius: 16px;
+  text-decoration: none;
+  font-weight: 700;
+  border: 1px solid transparent;
+  transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  will-change: transform;
+}
+
+.btn:hover { transform: translateY(-1px); }
+.btn.primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: white;
+  box-shadow: 0 16px 40px rgba(139, 92, 246, 0.26);
+}
+
+.btn.secondary {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: var(--line);
+  color: var(--text);
+}
+
+.meta {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.meta-item {
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--line);
+  min-height: 88px;
+}
+
+.meta-item strong {
+  display: block;
+  font-size: 0.98rem;
+  margin-bottom: 6px;
+}
+
+.meta-item span {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.hero-art {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+}
+
+.cover-frame {
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+  min-height: 100%;
+}
+
+.cover-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 1 / 1.12;
+}
+
+.ad-slot {
+  border-radius: 22px;
+  border: 1px dashed rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 18px;
+  color: var(--soft);
+  text-align: center;
+  min-height: 96px;
+  display: grid;
+  place-items: center;
+  gap: 6px;
+}
+
+.ad-slot strong {
+  color: var(--text);
+  font-size: 0.98rem;
+}
+
+.section {
+  padding: 10px 0 22px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.panel {
+  padding: 30px;
+}
+
+.title {
+  margin: 0 0 14px;
+  font-size: 1.55rem;
+  letter-spacing: -0.02em;
+}
+
+p {
+  margin: 0 0 14px;
+  color: var(--muted);
+}
+
+.pills {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pills li {
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid var(--line);
+  color: #e2e8f0;
+  font-size: 0.95rem;
+}
+
+.download-box {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.download-left,
+.download-right {
+  padding: 30px;
+  min-height: 100%;
+}
+
+.file-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  margin: 4px 0 18px;
+  word-break: break-word;
+}
+
+.download-feat {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.feat {
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--line);
+  color: var(--muted);
+}
+
+.feat strong { color: var(--text); display: block; margin-bottom: 4px; }
+
+footer {
+  padding: 24px 0 40px;
+  color: var(--soft);
+  text-align: center;
+  font-size: 0.94rem;
+}
+
+.fine {
+  font-size: 0.88rem;
+  color: var(--soft);
+}
+
+.spacer {
+  height: 14px;
+}
+
+@media (max-width: 980px) {
+  .hero,
+  .grid-2,
+  .download-box {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-copy,
+  .download-left,
+  .download-right,
+  .panel {
+    padding: 26px;
+  }
+
+  .meta {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .wrap { padding: 16px; }
+  .topbar { flex-direction: column; align-items: flex-start; }
+  h1 { font-size: 2.55rem; }
+  .hero-copy, .download-left, .download-right, .panel { padding: 22px; }
+  .actions { flex-direction: column; }
+  .btn { width: 100%; }
+}
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">🐉</div>
+        <div class="brand-text">
+          <strong>Dudu, o Pequeno Dragão</strong>
+          <span>Livro infantil digital</span>
+        </div>
+      </div>
+      <div class="tiny">Leitura leve, visual moderno e download direto</div>
+    </header><main>
+  <section class="hero">
+    <div class="card hero-copy">
+      <span class="eyebrow">Coragem • amizade • primeiro voo</span>
+      <h1>Uma história para crianças que têm medo, mas tentam mesmo assim.</h1>
+      <p class="lede">
+        Dudu mora em um vale encantado e aprende que sentir medo faz parte.
+        Aos poucos, ele descobre que coragem não é não ter medo — é continuar apesar dele.
+      </p>
+
+      <div class="actions">
+        <a class="btn primary" href="assets/Dudu_O_Pequeno_Dragao.pdf" download>Baixar PDF</a>
+        <a class="btn secondary" href="#sobre">Ver detalhes</a>
+      </div>
+
+      <div class="meta">
+        <div class="meta-item">
+          <strong>Autor</strong>
+          <span>Rafael Vieira Dantas</span>
+        </div>
+        <div class="meta-item">
+          <strong>Público</strong>
+          <span>Livro infantil digital</span>
+        </div>
+        <div class="meta-item">
+          <strong>Mensagem</strong>
+          <span>“A coragem aparece quando tentamos mesmo assim.”</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card hero-art">
+      <div class="cover-frame">
+        <img src="assets/cover.png" alt="Capa do livro Dudu, o Pequeno Dragão">
+      </div>
+      <div class="ad-slot" aria-label="Espaço para banner de anúncio">
+        <strong>Espaço para banner</strong>
+        <span>300×250 ou responsivo</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section grid-2" id="sobre">
+    <div class="card panel">
+      <h2 class="title">Sobre o livro</h2>
+      <p>
+        Esta página foi reorganizada para ficar limpa, elegante e direta ao ponto.
+        O foco está no livro, no autor e no botão de download.
+      </p>
+      <p>
+        A história acompanha Dudu, um pequeno dragão que aprende a enfrentar o medo de voar.
+        O visual é pensado para leitura em celular, tablet e computador.
+      </p>
+      <ul class="pills">
+        <li>Download direto</li>
+        <li>Design moderno</li>
+        <li>Responsivo</li>
+        <li>Espaço para anúncios</li>
+      </ul>
+    </div>
+
+    <div class="card panel">
+      <h2 class="title">Espaço promocional</h2>
+      <p>
+        Área reservada para banners, campanhas, afiliados, divulgação de outros livros ou anúncios.
+      </p>
+      <div class="ad-slot" style="min-height: 220px;">
+        <strong>Banner principal</strong>
+        <span>ideal para 728×90, 970×250 ou responsivo</span>
+      </div>
+      <div class="spacer"></div>
+      <p class="fine">
+        Você pode trocar esse bloco por um anúncio, um formulário, um QR code ou uma chamada para redes sociais.
+      </p>
+    </div>
+  </section>
+
+  <section class="section card download-box">
+    <div class="download-left">
+      <span class="eyebrow">Download oficial</span>
+      <h2 class="title" style="margin-bottom: 10px;">Livro pronto para compartilhar</h2>
+      <p>
+        O PDF já está dentro da pasta <strong>assets</strong> para funcionar bem em hospedagem estática.
+      </p>
+      <a class="btn primary" href="assets/Dudu_O_Pequeno_Dragao.pdf" download>Baixar agora</a>
+      <div class="file-pill">/assets/Dudu_O_Pequeno_Dragao.pdf</div>
+      <p class="fine">Também pode ser adaptado para versão com eBook, leitura online ou página de vendas.</p>
+    </div>
+    <div class="download-right" style="background: rgba(255,255,255,0.03);">
+      <h3 class="title" style="font-size:1.2rem; margin-bottom: 12px;">Mais espaço para anúncios</h3>
+      <div class="ad-slot" style="min-height: 140px; margin-bottom: 14px;">
+        <strong>Banner lateral</strong>
+        <span>ideal para 336×280</span>
+      </div>
+      <div class="ad-slot" style="min-height: 140px;">
+        <strong>Banner secundário</strong>
+        <span>ideal para 300×250</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div>Dudu, o Pequeno Dragão</div>
+  <div class="fine">Página estática com foco no livro, no autor e nos espaços publicitários.</div>
+</footer>
+
+  </div>
+</body>
+</html>      --radius-sm:18px;
       --max:1180px;
     }
 
