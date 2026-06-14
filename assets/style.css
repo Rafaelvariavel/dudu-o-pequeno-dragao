@@ -1,1 +1,70 @@
+.donation{
+  margin-top:40px;
+  text-align:center;
+  padding:30px;
+  border-top:1px solid var(--line);
+}
 
+.qr{
+  max-width:220px;
+  width:100%;
+  border-radius:20px;
+  border:1px solid var(--line);
+}
+
+.small{
+  color:var(--muted);
+}
+
+.feedback{
+  margin-top:40px;
+  border-top:1px solid var(--line);
+  padding-top:30px;
+}
+
+.feedback h2{
+  margin-bottom:20px;
+}
+
+.stars{
+  display:flex;
+  gap:6px;
+  margin-bottom:20px;
+}
+
+.stars button{
+  font-size:32px;
+  background:none;
+  border:none;
+  cursor:pointer;
+}
+
+#name,
+#comment{
+  width:100%;
+  padding:12px;
+  margin-bottom:12px;
+  border-radius:12px;
+  border:1px solid var(--line);
+  font:inherit;
+}
+
+#comment{
+  min-height:120px;
+  resize:vertical;
+}
+
+.comment{
+  margin-top:16px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:16px;
+}
+
+.actions{
+  margin-top:10px;
+}
+
+.actions button{
+  margin-right:8px;
+  }
