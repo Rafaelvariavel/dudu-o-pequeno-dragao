@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dudu-o-pequeno-dragao.pages.dev/sitemap.xml
